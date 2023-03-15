@@ -9,6 +9,10 @@
  *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
  * };
  */
+/*
+Same as same tree
+Creating implict stack of fn elements where they do some work and create 2 fn calls each time until the first element gets poped out by closing brace of that fn call element
+*/
 class Solution {
 public:
     bool isSymmetric(TreeNode* root) {
