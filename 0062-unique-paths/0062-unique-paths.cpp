@@ -33,10 +33,14 @@ public:
         //for tabulation we declare a vector 
         //becuase we iterate each path once we need to calculate the ways to reach that cell
         //if there is a cell means we include it to the count 
+        //Bottum up start with base case
+        //1 step is need to reach the 0,j
+        //and 1 step is reached to reach the i,0
         vector<vector<int>> dp(m,vector<int>(n,1));
         for(auto i=1;i<m;i++)
         {
             for(auto j=1;j<n;j++){
+             //dp[currentright][currentdown]=dp[previousright][currentdown]+dp[currentright][previousdown]
                 dp[i][j]=dp[i-1][j]+dp[i][j-1];
             }
         }
