@@ -10,7 +10,7 @@ public:
                    if(check<=k)return true;
        
                }
-                    hm[nums[i]]=i;
+               hm[nums[i]]=i;
            }
         return false;
     }
