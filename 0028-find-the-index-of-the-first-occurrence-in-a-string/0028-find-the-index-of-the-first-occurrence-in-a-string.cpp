@@ -1,5 +1,6 @@
 class Solution {
 public:
+    //sliding window O(n*m)
     int strStr(string haystack, string needle) {
         int n = haystack.size(), m = needle.size();
 
