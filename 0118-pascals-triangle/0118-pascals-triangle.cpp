@@ -12,6 +12,7 @@ public:
             vector<int>row(i+1,1);
             for(auto j=1;j<i;j++)
             {
+            //current_element in the row =currenteleement above + current elment aboe beside    
                 row[j]=dp[i-1][j]+dp[i-1][j-1];
             }
             dp.push_back(row);
