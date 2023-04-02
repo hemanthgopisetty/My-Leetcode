@@ -7,6 +7,14 @@ using namespace std;
 //User function template for C++
 class Solution{
 public:
+    int ls(int arr[],int idx,int n,int k)
+    {
+        if(idx==0)
+        {
+            return (arr[idx]==k) ? idx+1 :-1;
+        }
+        return (arr[idx]== k and idx >=0) ? idx+1 : ls(arr,idx-1,n,k);
+    }
 	int search(int arr[], int n, int k) {
 	    for(auto i=0;i<n;i++)
 	    {
