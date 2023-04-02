@@ -13,7 +13,7 @@ class Solution {
 public:
     void dfs(TreeNode* root,string s,vector<string>&a)
     {
-        //visit,left,right;
+        //visit,left,right->preorder;
         s+=to_string(root->val);
         //root condition
         if(root->left==nullptr and root->right == nullptr)
