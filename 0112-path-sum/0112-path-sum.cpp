@@ -23,12 +23,18 @@ public:
         //add the current value and check whether they both are equal or not
         if( !root->left and !root->right )
         {
+            //add current root value 
             x=x+root->val;
-            if(x==s)
+            if(x==s)//true
             {
+                //then
                 return true ;
             }
         }
+        
+        //given sum may be in left subtree or right subtree 
+        //if any of the given subtree give true then
+        //there is required sum
         
         return inorder(root->left,x+root->val,s) or inorder(root->right,x+root->val,s);
     }
