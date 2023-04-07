@@ -39,6 +39,7 @@ public:
         return inorder(root->left,x+root->val,s) or inorder(root->right,x+root->val,s);
     }
     bool hasPathSum(TreeNode* root, int sum) {
+        
         return inorder(root,0,sum);
     }
 };
