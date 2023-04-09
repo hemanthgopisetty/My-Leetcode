@@ -23,6 +23,7 @@ public:
             
             currset.push_back(candidates[i]);
             
+            //from current set,go backtrack
             dfs(candidates,currset,ans,i+1,target-candidates[i]);
             
             currset.pop_back();
