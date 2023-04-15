@@ -20,7 +20,7 @@ public:
            seen[nums[i]]++;
            seen[nums[i-k]]--;
            
-           if(seen[nums[i-k]] == 0)seen.erase(nums[i-k]);
+          if(seen[nums[i-k]] == 0)seen.erase(nums[i-k]);
             
             sum+=nums[i];
             sum-=nums[i-k];
