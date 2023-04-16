@@ -26,6 +26,7 @@ public:
                 focusednode=q.front();
                 q.pop();
                 f.push_back(focusednode->val);
+                
             if(focusednode->left != nullptr)
             {
                 q.push(focusednode->left);
