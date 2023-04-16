@@ -12,7 +12,7 @@
 class Solution {
 public:
     vector<vector<int>> levelOrderBottom(TreeNode* root) {
-        if(root==nullptr)return {};
+        if(!root)return {};
         queue<TreeNode*> q;
         
         q.push(root);
