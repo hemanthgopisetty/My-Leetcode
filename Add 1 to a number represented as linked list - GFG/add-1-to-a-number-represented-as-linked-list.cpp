@@ -46,53 +46,30 @@ struct Node
 class Solution
 {
     public:
-    Node* reverse(Node* head)
+    int helper(Node* head)
     {
-        Node* next;
-        Node* cur=head;
-        Node* prev=nullptr;
-        while(cur!=nullptr)
+        if(head==nullptr)
         {
-            next=cur->next;
-            cur->next=prev;
-            prev=cur;
-            cur=next;
-        }
-        return prev;
-    }
-    Node* helper(Node* head)
-    {
-        Node*ptr=head;
-        Node*prev;//repersents the lastnode
-        
-        int sum=0;
-        int carry=1;
-        
-        while(ptr!=nullptr)
-        {
-            sum = carry + ptr->data;
-            carry=(sum>=10) ? 1 : 0 ;
-            sum=sum%10;
-            
-            ptr->data=sum;
-            
-            prev=ptr;
-            ptr=ptr->next;
-        }
-        if(carry>0)
-        {
-            prev->next= new Node(carry);
+            return 1;
         }
         
-        return head;
+        int res = head->data +helper(head->next);
+        head->data = res % 10 ;
+        
+        return res/10;
     }
     Node* addOne(Node *head) 
     {
         // Your Code here
         // return head of list after adding one
-        head = reverse(head);
-        head = helper(head);
-        return reverse(head);
+        int carry= helper(head);
+        if(carry>0)
+        {
+            Node* newnode = new Node(carry);
+            newnode->next=head;
+            head=newnode;
+        }
+        return head;
     }
 };
 
