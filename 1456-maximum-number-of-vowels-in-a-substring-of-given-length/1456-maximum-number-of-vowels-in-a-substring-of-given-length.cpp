@@ -10,23 +10,12 @@ public:
         
         int ans=INT_MIN,cnt=0;
         int n=s.size();
-        for(auto i=0;i<k;i++)
+        for(auto i=0;i<n;i++)
         {
-            if(a[s[i]-'a'])
+            cnt+=(int)a[s[i]-'a'];
+            if(i>=k)
             {
-                cnt++;
-            }
-        }
-        ans=max(ans,cnt);
-        for(auto i=k;i<n;i++)
-        {
-            if(i-k>=0 and a[s[i-k]-'a'])
-            {
-                cnt--;
-            }
-            if(a[s[i]-'a'])
-            {
-                cnt++;
+                cnt-=(int)a[s[i-k]-'a'];
             }
             ans=max(ans,cnt);
         }
