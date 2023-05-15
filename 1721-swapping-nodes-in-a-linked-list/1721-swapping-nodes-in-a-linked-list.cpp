@@ -20,6 +20,20 @@ public:
           after keeping the bnk at the kth node we have now two pointer's pointing to 
           k th node
           
+          after that move the ptr pointing to the kth node to next node
+          and keep a pointer at first node named as endk in such a way we are having a distance between ptr and endk of k
+          
+          when ptr reaches null then endk ptr will be at kth node form the end of the given linked list
+          
+          noew two pointer are pointing to the 
+            kth node from the beginning ->bnk
+            kth node from the end -> endk
+            
+            qns description was two swap the values
+            so swap the values of bnk and endk
+            
+            that's it 
+          
         */
         ListNode *ptr=head,*endk=head,*bnk=nullptr;
         for(auto i=1;i<k;i++)
