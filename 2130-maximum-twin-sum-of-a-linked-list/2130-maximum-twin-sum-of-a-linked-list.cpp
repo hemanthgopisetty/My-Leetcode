@@ -11,6 +11,7 @@
 class Solution {
 public:
     int pairSum(ListNode* head) {
+        /*
         ListNode* slow=head,*fast=head;
         while(fast and fast->next)
         {
@@ -31,6 +32,24 @@ public:
             maxval=max(maxval,head->val+prev->val);
             prev=prev->next;
             head=head->next;
+        }
+        return maxval;
+        */
+        int maxval=0;
+        stack<int>st;
+        ListNode *slow,*fast;
+        slow=head,fast=head;
+        while(fast and fast->next)
+        {
+            fast=fast->next->next;
+            st.push(slow->val);
+            slow=slow->next;
+        }
+        while(slow)
+        {
+            maxval=max(maxval,st.top()+slow->val);
+            st.pop();
+            slow=slow->next;
         }
         return maxval;
     }
