@@ -1,24 +1,24 @@
 class Solution {
 public:
-    int lcs(vector<vector<int>>&dp,string& a,string& b,int i,int j)
-    {
-        if(i==0 or j==0)return 0;
-        
-        if(dp[i][j]!=-1) return dp[i][j];
-        
-        if(a[i-1]==b[j-1])
+    int longestCommonSubsequence(string text1, string text2) {
+        int m=text1.size();
+        int n=text2.size();
+        int dp[1001][1001]{};
+        for(auto i=1;i<m+1;i++)
         {
-           return dp[i][j]=1+lcs(dp,a,b,i-1,j-1);
+            for(auto j=1;j<n+1;j++)
+            {
+                if(text1[i-1]==text2[j-1])
+                {
+                    dp[i][j]=1+dp[i-1][j-1];
+                }
+                else
+                {
+                    dp[i][j]=max(dp[i-1][j],dp[i][j-1]);
+                }
+            }
         }
+        return dp[m][n];
         
-        return dp[i][j]=max(lcs(dp,a,b,i-1,j),lcs(dp,a,b,i,j-1));
-    }
-    int longestCommonSubsequence(string a, string b) {
-        
-        int n=a.size();
-        int m=b.size();
-        
-        vector<vector<int>>dp(n+1,vector<int>(m+1,-1));
-        return lcs(dp,a,b,n,m);
     }
 };
