@@ -8,7 +8,7 @@ class Solution:
         for i in range(1,target+1):
             if i%coins[0]==0:
                 dp[0][i]=1
-        for i in range(1, n): # DP as described above
+        for i in range(1, n):
             coin = coins[i]
             for j in range(1, target + 1):
                 if j - coin >= 0:
