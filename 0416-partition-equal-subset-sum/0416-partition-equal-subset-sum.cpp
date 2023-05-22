@@ -1,6 +1,6 @@
 class Solution {
 public:
-    
+    //"DP problems are easy to understand only if you can deduce recursive relationship in the problem"
     bool dfs(vector<int>& nums,vector<vector<bool>>& dp,vector<vector<bool>>& visited,int idx,int sum)
     {
         if(sum==0)return dp[idx][sum]=true;
