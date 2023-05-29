@@ -26,7 +26,8 @@ public:
         int m=word1.size();
         vector<vector<int>>dp(m+1,vector<int>(n+1,-1));
         /*
-        
+            when there is a call for 1,1 then it will check for 0,0
+            when there is a call for 0,0 that means we need to insert those no of characters over there
         */
         return dfs(word1,word2,m,n,dp);
     }
