@@ -17,11 +17,11 @@ public:
         
         if(dp[r][c]!=INT_MAX)return dp[r][c];
         
-        // int directly_below      = dfs(grid,r+1,c,dp);
-        // int diagonally_left     = dfs(grid,r+1,c-1,dp); 
-        // int diagonally_right    = dfs(grid,r+1,c+1,dp);
+        int directly_below      = dfs(grid,r+1,c,dp);
+        int diagonally_left     = dfs(grid,r+1,c-1,dp); 
+        int diagonally_right    = dfs(grid,r+1,c+1,dp);
         
-        return dp[r][c]=grid[r][c]+min(dfs(grid,r+1,c,dp),min(dfs(grid,r+1,c-1,dp),dfs(grid,r+1,c+1,dp)));
+        return dp[r][c]=grid[r][c]+min(directly_below,min(diagonally_left,diagonally_right));
     }
     int memoization(vector<vector<int>>&grid)
     {
