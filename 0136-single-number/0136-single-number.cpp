@@ -12,7 +12,8 @@ public:
     //In this way we will get Linear time and space complexity.
     
     //what to do then ??
-    //Bit manipulation :)
+    //Bit manipulation :) To find the every element appears twice except for one 
+    //Pproperites A^A 0 A^B B
     
     int singleNumber(vector<int>& nums) {
         int ans=0;
