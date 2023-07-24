@@ -42,9 +42,6 @@ public:
                     minl=fast-slow+1;
                     result = s.substr(slow,minl);
                 }
-                
-                //mo
-                cout<<slow<<"  sdfsdf"<<endl;
                 shm[s[slow]]--;
                 slow++;
                 counter--;
