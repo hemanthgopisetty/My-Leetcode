@@ -29,17 +29,22 @@ public:
             //if we got one window 
             if(counter>=t.size())
             {
+                //then move the slow pointer if it's t char or t's freq is greater than the s'freq
                 while(thm.find(s[slow]) == thm.end() or shm[s[slow]]>thm[s[slow]])
                 {
+                    cout<<s[slow]<<endl;
                     shm[s[slow]]--;
                     slow++;
                 }
-                
+                //calcualte the length
                 if(fast-slow+1<minl)
                 {
                     minl=fast-slow+1;
                     result = s.substr(slow,minl);
                 }
+                
+                //mo
+                cout<<slow<<"  sdfsdf"<<endl;
                 shm[s[slow]]--;
                 slow++;
                 counter--;
