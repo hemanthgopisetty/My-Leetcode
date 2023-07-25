@@ -30,7 +30,7 @@ public:
     
     //that gonna give tc and sc of nlogn and n
     
-    
+    //reason for using the refernce for k is to mantinan concurrency across the same recursion's
     void dfs(TreeNode*root,int& k)
     {
         if(!root)return ;
