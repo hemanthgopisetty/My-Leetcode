@@ -14,6 +14,7 @@ public:
             }
             else if(ele==1)
             {
+                //represent elements before this all are zeroes 
                 one++;
             }
             else //ele == 2
