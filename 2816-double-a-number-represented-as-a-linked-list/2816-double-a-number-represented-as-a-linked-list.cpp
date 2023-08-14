@@ -43,6 +43,7 @@ public:
     }
     ListNode* doubleIt(ListNode* head) {
         
+        //there may have chance of remaining extra carry
         int carry = recurs(head);
         
         if(carry) head = new ListNode(carry,head);
