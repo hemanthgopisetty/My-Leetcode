@@ -6,6 +6,7 @@ public:
         int l=0,r=nums.size()-1;
         while(l<=r)
         {
+            //to get rid of overflow l and r INT_MAX
             int mid=l+(r-l)/2;
             if(nums[mid]==target)return mid;
             
