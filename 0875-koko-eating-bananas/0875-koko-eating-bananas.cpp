@@ -14,6 +14,7 @@ public:
     int minEatingSpeed(vector<int>& piles, int h) {
         
         int l=1,r=*(max_element(begin(piles),end(piles)));
+        //l and r creates an sorted imaginary array ;
         int ans =-1;
         while(l<=r)
         {
