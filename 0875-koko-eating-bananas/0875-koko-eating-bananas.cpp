@@ -5,6 +5,8 @@ public:
         long long total_hours =0;
         for(auto it:piles)
         {
+            //why ceil means 
+            //koku eats all of them instead and will not eat any more bananas during this hour.
             total_hours+=ceil(it/(double)speed);
         }
         return total_hours<=h;
@@ -30,4 +32,10 @@ public:
         
         return ans ;
     }
+    /*
+        bs on Imaginary array
+        check wether koku can eat all the banans in less than or equal to the given time
+        
+        
+    */
 };
