@@ -37,17 +37,17 @@ public:
         }
         
         //join the mid half and first half according the question
-        ListNode*mid=prev,*fir=head;
-        while(mid!=nullptr and fir!=nullptr)
+        ListNode*mid_half=prev,*first_half=head;
+        while(mid_half!=nullptr and first_half!=nullptr)
         {
-            ListNode*fnext=fir->next;
-            ListNode*mnext=mid->next;
+            ListNode*fnext=first_half->next;
+            ListNode*mnext=mid_half->next;
             
-            fir->next=mid;
-            mid->next=fnext;
+            first_half->next=mid_half;
+            mid_half->next=fnext;
             
-            fir=fnext;
-            mid=mnext;
+            first_half=fnext;
+            mid_half=mnext;
         }
     }
 };
