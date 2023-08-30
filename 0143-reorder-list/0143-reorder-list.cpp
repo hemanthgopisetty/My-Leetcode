@@ -25,7 +25,7 @@ public:
         //reverse the linked list from the middle (slow)
         ListNode*prev=nullptr,*cur=slow->next;
         
-        //make null to last node of first half list; 
+        //make null to last node of first_half list; 
         slow->next=nullptr;
         
         while(cur)
@@ -36,16 +36,20 @@ public:
             cur=next;
         }
         
-        //join the mid half and first half according the question
+        //join the mid_half and first_half according the question
         ListNode*mid_half=prev,*first_half=head;
         while(mid_half!=nullptr and first_half!=nullptr)
         {
+            //storing all two half's next 
             ListNode*fnext=first_half->next;
             ListNode*mnext=mid_half->next;
             
+            //point first_half current node->next to the mid_half current node
             first_half->next=mid_half;
+            //point mid_half current_node->next to the fnext(first_half current node ->next)
             mid_half->next=fnext;
             
+            //move current node the stored next's
             first_half=fnext;
             mid_half=mnext;
         }
