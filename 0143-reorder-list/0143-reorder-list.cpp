@@ -24,7 +24,10 @@ public:
         
         //reverse the linked list from the middle (slow)
         ListNode*prev=nullptr,*cur=slow->next;
+        
+        //make null to last node of first half list; 
         slow->next=nullptr;
+        
         while(cur)
         {
             ListNode* next = cur->next;
