@@ -11,6 +11,7 @@ public:
         {
             generate(ans,s+'(',open_char+1,close_char,limit);
         }
+        
         if(close_char<open_char)
         {
             generate(ans,s+')',open_char,close_char+1,limit);
