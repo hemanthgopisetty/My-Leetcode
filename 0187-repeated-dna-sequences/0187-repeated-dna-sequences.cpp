@@ -12,7 +12,7 @@ public:
         
         
         //storing the string in the hashmap would give us memory limit excced
-        hash<string> hfn;
+        hash<string> hfn;//for indexing 
         unordered_map<size_t,int> hm ;
         vector<string>ans ;
         int n = s.size();
