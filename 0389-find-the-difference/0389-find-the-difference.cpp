@@ -13,7 +13,7 @@ public:
             if(hm2[dup]!=hm1[dup])
             {  
                 ans=dup;
-                // break;
+                break;
             }
         }
         return ans;
