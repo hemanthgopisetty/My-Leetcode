@@ -19,7 +19,7 @@ public:
 //         }
 //         return ans;
         
-/*TIME COMPLEXITY O(N) SPACE COMPLEXITY O(N)*/
+/*TIME COMPLEXITY O(N) SPACE COMPLEXITY O(1)*/
         char c=0;
         for(auto it:s)c^=it;
         for(auto it:t)c^=it;
