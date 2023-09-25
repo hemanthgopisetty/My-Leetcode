@@ -1,6 +1,7 @@
 class Solution {
 public:
     char findTheDifference(string s, string t) {
+/*TIME COMPLEXITY O(N) SPACE COMPLEXITY O(N)*/
 //         map<char,int> hm1,hm2;
 //         char ans;
 //         for(auto i=0;i<s.size();i++)hm1[s[i]]++;
@@ -18,6 +19,7 @@ public:
 //         }
 //         return ans;
         
+/*TIME COMPLEXITY O(N) SPACE COMPLEXITY O(N)*/
         char c=0;
         for(auto it:s)c^=it;
         for(auto it:t)c^=it;
