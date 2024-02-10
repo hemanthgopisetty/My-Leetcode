@@ -18,7 +18,7 @@ public:
                 count += fn(dp,s,i,j);
             }
         }
-
+        
         return count;
     }
 };
