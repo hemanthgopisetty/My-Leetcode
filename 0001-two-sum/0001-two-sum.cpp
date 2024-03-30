@@ -16,6 +16,7 @@ public:
                 hm[nums[i]]=i;
             }
         }
+        //used hashmap
         return ans;
     }
 };
