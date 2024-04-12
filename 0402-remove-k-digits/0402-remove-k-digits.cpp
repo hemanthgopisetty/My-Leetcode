@@ -1,30 +1,30 @@
 class Solution {
 public:
     string removeKdigits(string num, int k) {
-         string ans="";
-        for(char &c:num)
+        //Monotonic Stack
+        //String as Stack
+        
+        string ans="";
+        int n = num.size();
+        for(int i=0;i<n;i++)
         {
-            while(ans.size() && ans.back()>c &&k)
+            //current element check
+            while(ans.size()>0  and k>0 and ans.back()>num[i])
             {
                 ans.pop_back();
                 k--;
             }
-            if(ans.size()||c!='0')ans.push_back(c);
+            //push check
+            if(ans.size()>0 || num[i]!='0')ans.push_back(num[i]);
         }
-        while(ans.size()&&k--)          // <-------this look is to make sure we fulfil the deletion condition
+        
+        //if still k not equal to zero
+        while(k>0 and ans.size()>0)
         {
             ans.pop_back();
+            k--;
         }
-        return (ans=="")?"0":ans;
+        
+        return (ans==""?"0":ans) ;
     }
-    
-    
 };
-
-//1432219
-//1122349 if we remove any k didgits
-//1221
-//1219 if we remove according to the sequence
-
-//then we need to maintain motonocity 
-//becuase 
