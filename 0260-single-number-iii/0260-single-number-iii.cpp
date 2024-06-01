@@ -15,12 +15,11 @@ public:
         
         // we need to something with this elements appears twice 
         // two elements appears single
-int xor2no = 0;
+        int xor2no = 0;
         for (int num : nums) {
             xor2no ^= num;
         }
 
-        // Cast xor2no to unsigned to avoid undefined behavior with -INT_MIN
         unsigned int lowestBit = xor2no & -(unsigned int)xor2no;
 
         vector<int> result(2, 0);
