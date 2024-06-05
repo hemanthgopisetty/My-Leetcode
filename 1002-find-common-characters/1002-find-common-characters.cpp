@@ -1,5 +1,7 @@
 class Solution {
 public:
+    // logic is to take care of minimum
+    
     vector<string> commonChars(vector<string>& words) {
         vector<int> minC(26,INT_MAX);
         for(auto it:words){
