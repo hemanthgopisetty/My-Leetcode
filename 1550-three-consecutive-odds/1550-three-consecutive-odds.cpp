@@ -4,10 +4,15 @@ public:
         if(arr.size()<3)return false ;
         for(int i=0;i<arr.size()-2;i++)
         {
-            if((arr[i]%2!=0) and (arr[i+1]%2!=0) and (arr[i+2]%2!=0))
-            {
-              return true ;   
-            }
+            // if((arr[i]%2!=0) and (arr[i+1]%2!=0) and (arr[i+2]%2!=0))
+            // {
+            //   return true ;   
+            // }
+            
+            int product = arr[i] * arr[i + 1] * arr[i + 2];
+            // Check if the product is odd
+            if (product % 2 == 1) return true;
+            
         }
         return false ;
     }
