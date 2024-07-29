@@ -21,7 +21,7 @@ public:
  */
 
 /*
-* creare prefixSum 
+* create prefixSum 
 * Intilaze them during constructor
 * Then sum Range will be called then we can return l to r sum in O(1)
 */
