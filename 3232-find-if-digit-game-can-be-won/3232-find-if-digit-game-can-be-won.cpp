@@ -10,7 +10,7 @@ public:
             {
                 twos+=nums[i];
             }
-            else 
+            else // ones digit
             {
                 ones+=nums[i];
             }
