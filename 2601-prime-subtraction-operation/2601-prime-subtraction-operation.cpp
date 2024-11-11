@@ -13,9 +13,31 @@ public:
         return 1;
     }
     bool primeSubOperation(vector<int>& nums) {
+
         int n=nums.size();
+        //prime numbers is range is between 1000
+        //we need to find primes within 1000
+        //we prime[p]=p
+        //if prime[p] is not the prime number we forward the latest prime numer
+        //prime[3]=3 prime[4]=3 prime[5]=5
+        
+        //create prime array to store 2 to maxelement
+        int maxElement = *max_element(nums.begin(), nums.end());
+        vector<int>primes(maxElement+1,0);
+        for(int i=2;i<=maxElement;i++)
+        {
+            if(checkPrime(i))
+            {
+                primes[i]=i;
+            }
+            else
+            {
+                primes[i]=primes[i-1];
+            }
+        }
         for(int i=0;i<n;i++)
         {
+            // diff tells wether current num and prev is sorted or not 
             int diff ;
             //if its first element we need to find the largest prime than nums[0]
             if(i==0)
@@ -32,16 +54,9 @@ public:
                 return 0;
             }
             
-            int largestPrime=0;
-            //Find largest prime by sqrt(j)
-            for(int j=diff-1;j>=2;j--)
-            {
-                if(checkPrime(j))
-                {
-                    largestPrime=j;
-                    break;
-                }
-            }
+            int largestPrime=primes[diff-1];
+            //Find largest prime array by sqrt(j)
+            
             nums[i]=nums[i]-largestPrime;
             //chec
         }
