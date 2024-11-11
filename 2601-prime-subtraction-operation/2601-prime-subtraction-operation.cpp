@@ -16,25 +16,25 @@ public:
         int n=nums.size();
         for(int i=0;i<n;i++)
         {
-            int bound ;
+            int diff ;
             //if its first element we need to find the largest prime than nums[0]
             if(i==0)
             {
-                bound = nums[0];
+                diff = nums[0];
             }
             else
             {
                 // Otherwise, we need to find the largest prime
-                bound = nums[i]-nums[i-1];
+                diff = nums[i]-nums[i-1];
             }
             
-            if (bound <= 0) {
+            if (diff <= 0) {
                 return 0;
             }
             
             int largestPrime=0;
             //Find largest prime by sqrt(j)
-            for(int j=bound-1;j>=2;j--)
+            for(int j=diff-1;j>=2;j--)
             {
                 if(checkPrime(j))
                 {
