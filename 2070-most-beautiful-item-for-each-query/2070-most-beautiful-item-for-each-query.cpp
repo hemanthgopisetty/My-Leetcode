@@ -29,19 +29,43 @@ public:
             return a[0]<b[0];
             
         });
-        //Preprocees
-        //Max Beauty Value
-        int maxB = items[0][1];
-        for(int i=0;i<items.size();i++)
+        //Sotring queries with indices
+        vector<vector<int>>qi(n,vector<int>(2));
+        for(int i=0;i<queries.size();i++)
         {
-            maxB = max(items[i][1],maxB);
-            items[i][1]=maxB;
+            qi[i][0]=queries[i];
+            qi[i][1]=i;
         }
-        //for maximum beauty do binary search
+        //Sorting queries with indices
+        sort(qi.begin(),qi.end(),[](vector<int>&a,vector<int>&b){
+            return a[0]<b[0];
+        });
+        // //Preprocees
+        // //Max Beauty Value
+        // int maxB = items[0][1];
+        // for(int i=0;i<items.size();i++)
+        // {
+        //     maxB = max(items[i][1],maxB);
+        //     items[i][1]=maxB;
+        // }
+        // //for maximum beauty do binary search
+        // for(int i=0;i<n;i++)
+        // {
+        //     int beauty = bs(queries[i],items);
+        //     ans[i]=beauty;
+        // }
+        int itemidx=0;
+        int maxB=0;
         for(int i=0;i<n;i++)
         {
-            int beauty = bs(queries[i],items);
-            ans[i]=beauty;
+            int query = qi[i][0];
+            int oi = qi[i][1];
+            while(itemidx<items.size() and items[itemidx][0]<=query)
+            {
+                maxB=max(maxB,items[itemidx][1]);
+                itemidx++;
+            }
+            ans[oi]=maxB;
         }
         return ans;
     }
