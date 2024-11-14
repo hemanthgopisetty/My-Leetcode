@@ -9,7 +9,9 @@ public:
         for (int i = 1; i < s.size(); i++) {
             if (s[i] == prev) {
                 frequency++;
-            } else {
+            } 
+            else 
+            {
                 prev = s[i];
                 frequency = 1;
             }
