@@ -40,3 +40,31 @@ public:
         
     */
 };
+/*
+piles = [3,6,7,11], h = 8
+There are total 8 hours,
+Koko needs 5 hours out of 8 hrs
+if k==1 ,to get complete the first pile koko needs 3 hrs,second pile koko need 6 hrs ,6+3=9 hrs
+if k==2 ,still it crosses 8 hrs
+if k==3 ,[1,2,3,4]=>1+2+3+4=10 hrs crosses 8 hrs
+if k==4 ,[1,2,2,3]=>1+2+2+3=8hrs  => equals 8 hrs
+if k==5 ,[1,2,2,3]=>1+2+2+3=8hrs  => equals 8 hrs
+if k==6 ,[1,1,2,2]=>1+1+2+2=6hrs  => less than 8hrs
+if k==7 ,[1,1,1,2]=>1+1+1+2=5hrs  => less than 8hrs
+if k==8 ,same
+if k==9 ,same
+if k==10,same
+if k==11,[1,1,1,1]=>1+1+1+1=4hrs  => same
+.
+.
+.
+.
+.
+.
+.
+.
+more than max of the array ans is same 
+
+1 to 11 => Check Each time
+
+*/
