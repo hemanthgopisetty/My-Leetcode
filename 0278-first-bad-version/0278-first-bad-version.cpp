@@ -3,24 +3,24 @@
 
 class Solution {
 public:
-    int bs(int l,int h)
-    {
-        if(l==h)return l;
-        else
-        {
-            int m = l+(h-l)/2;
-            
-            if(isBadVersion(m))
-            {
-               return  bs(l,m);
-            }
-            else
-            {
-               return  bs(m+1,h);
-            }
-        }
-    }
     int firstBadVersion(int n) {
-        return bs(1,n);
+         int lo = 1, hi = n, mid;
+        while (lo < hi) {
+            mid = lo + (hi - lo) / 2;
+            if (isBadVersion(mid)) hi = mid;
+            else lo = mid+1;
+        }
+        return lo;
     }
 };
+
+/*
+
+Find the first bad one
+
+
+let's check linearly one by one
+O(2^31)
+
+
+*/
