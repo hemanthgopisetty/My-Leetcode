@@ -16,28 +16,38 @@ public:
         }
         //Now build the answer by using hashmap and priority_queue
         string ans;
+        //until heap is empty
         while(!pq.empty())
         {
+            //Take top element
             char ch=pq.top();
+            //Pop the element
             pq.pop();
+            //Take Freq from hashmap
             int cnt=hm[ch];
             
+            //use limited Charaters from the map
             int use=min(cnt,repeatLimit);
             ans.append(use,ch);
             
             hm[ch]-=use;
             
+            //if top element still left after using limited character take next top element
             if(hm[ch]>0 and !pq.empty())
             {
+                //take next top element
                 char nxtch = pq.top();
                 pq.pop();
+                //push back to the ans
                 ans.push_back(nxtch);
-                
                 hm[nxtch]--;
+                
+                //check wether it's still there if yes push the second top character
                 if(hm[nxtch]>0)
                 {
                     pq.push(nxtch);
                 }
+                //as we know still first top are there we need to push it
                 pq.push(ch);
             }
         }
